@@ -1,0 +1,102 @@
+﻿@model TraversalCoreProject.Models.UserRegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Traversal Project Kayıt Ol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="/web/css/style.css" type="text/css" media="all" />
+    <style type="text/css">
+        .text-danger{ color: red;font-weight: bold;}
+    </style>
+</head>
+<body>
+    <section class="w3l-login-6">
+        <div class="login-hny">
+            <div class="form-content">
+                <div class="form-right">
+                    <div class="overlay">
+                        <div class="grid-info-form">
+                            <h5>Merhaba</h5>
+                            <h3>Hesabını Oluştur </h3>
+                            <p>
+                                Eşşiz deneyimler yaşamak için ve deneyimleri öğrenmek için sende kayıt ol.
+                            </p>
+                            <a href="javascript();" class="read-more-1 btn">Haydi Üyeliğini oluştur.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-left">
+                    <div class="middle">
+                        <h4>Katıl Bize</h4>
+                        <p>Hesabını oluştur ve Deneyimlerini Paylaş</p>
+                    </div>
+                    <form action="#" method="post" class="signin-form">
+                        <div class="form-input">
+                            <label>Ad</label>
+                            <input type="text" asp-for="Name" />
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Soyad</label>
+                            <input type="text" asp-for="Surname" />
+                            <span class="text-danger" asp-validation-for="Surname"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" asp-for="Username" />
+                            <span class="text-danger" asp-validation-for="Username"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Email</label>
+                            <input type="email" asp-for="Mail" />
+                            <span class="text-danger" asp-validation-for="Mail"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Şifre</label>
+                            <input type="password" asp-for="Password" />
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Şifre Tekrar</label>
+                            <input type="password" asp-for="ConfirmPassword" />
+                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                        
+                        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+                        </div>
+
+                        <label class="container">
+                            Şartları Okudum ve onaylıyorum.
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <button class="btn">Kayıt Ol!</button>
+                    </form>
+                    <div class="copy-right text-center">
+                        <p>
+                            © @DateTime.Now.Year Traversal Project
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

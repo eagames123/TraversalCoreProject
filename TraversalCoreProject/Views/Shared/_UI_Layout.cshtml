@@ -1,0 +1,10 @@
+﻿<!doctype html>
+<html lang="tr">
+@await Html.PartialAsync("/Views/Layout_Partial/_HeaderPartial.cshtml")
+<body>
+    @await Html.PartialAsync("/Views/Layout_Partial/_NavBarPartial.cshtml")
+    @RenderBody()
+    @await Html.PartialAsync("/Views/Layout_Partial/_FooterPartial.cshtml")
+    @await Html.PartialAsync("/Views/Layout_Partial/_ScriptPartial.cshtml")
+</body>
+</html>
