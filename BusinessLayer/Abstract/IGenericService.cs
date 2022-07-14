@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace BusinessLayer.Abstract
 {
@@ -13,6 +15,8 @@ namespace BusinessLayer.Abstract
         List<T> TGetList();
 
         T TGetById(int id);
+
+        //List<T> GetByFilter(Expression<Func<T,bool>> filter);
 
     }
 }
