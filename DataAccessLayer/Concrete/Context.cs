@@ -8,8 +8,8 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=LAPTOP-KQ5UJGE4\\SQLEXPRESS;database=TraversalDB;integrated security=true;");
-
+            optionsBuilder.UseSqlServer("server=DESKTOP-E6SPDSH\\SQLEXPRESS;database=TraversalDB;integrated security=true;");
+            //optionsBuilder.UseSqlServer("server=ISU-NB-00015;database=TraversalDB;integrated security=true;");
         }
 
         public DbSet<About> Abouts { get; set; }

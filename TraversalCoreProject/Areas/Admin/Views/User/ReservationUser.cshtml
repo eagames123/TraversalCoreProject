@@ -1,0 +1,33 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "ReservationUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Kullanıcı Geçmiş Rezervasyonları</span></h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Rota</th>
+        <th>Kişi Sayısı</th>
+        <th>Tarih</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ReservationId</td>
+            <td>
+                @*@item.AppUser.Name @item.AppUser.Surname*@
+                ###
+            </td>
+            <td>@item.Destination.City</td>
+            <td>@item.PersonCount</td>
+            <td>@(((DateTime)@item.ReservationDate).ToString("dd-MM-yyyy"))</td>
+            <td><a href="/Admin/User/DeleteUser/@item.ReservationId" class="btn btn-outline-danger">Detay</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Login/SignUp/" class="btn btn-outline-primary">Yeni Kullanıcı Ekle</a>

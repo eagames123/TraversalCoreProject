@@ -37,7 +37,6 @@ namespace TraversalCoreProject.Controllers
                 Email = userRegisterViewModel.Mail,
                 UserName = userRegisterViewModel.Username
             };
-
             if (userRegisterViewModel.Password == userRegisterViewModel.ConfirmPassword)
             {
                 var result = await _userManager.CreateAsync(appUser, userRegisterViewModel.Password);
@@ -55,15 +54,12 @@ namespace TraversalCoreProject.Controllers
                 }
 
             }
-
             return View();
         }
 
         [HttpGet]
         public IActionResult SignIn()
         {
-
-
             return View();
         }
 
