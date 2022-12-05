@@ -36,6 +36,7 @@ namespace DataAccessLayer.Concrete
         
         public DbSet<Reservation> Reservations { get; set; }
         
+        public DbSet<ContactUs> ContactUses { get; set; }
 
     }
 }
