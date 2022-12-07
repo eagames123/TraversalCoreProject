@@ -1,10 +1,7 @@
 using System.IO;
 using BusinessLayer.Container;
-using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
-using DTOLayer.DTOs.AnnouncemetDTOs;
 using EntityLayer.Concrete;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +42,7 @@ namespace TraversalCoreProject
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddTransient<IValidator<AnnouncemetAddDTO>, AnnouncemetValidator>();
+            services.CustomValidator();
 
             services.AddControllersWithViews().AddFluentValidation();
 

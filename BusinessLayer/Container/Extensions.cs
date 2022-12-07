@@ -1,7 +1,11 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using BusinessLayer.ValidationRules.AnnouncemetValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AnnouncemetDTOs;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BusinessLayer.Container
@@ -34,7 +38,13 @@ namespace BusinessLayer.Container
             
             services.AddScoped<IAnnouncemetService, AnnouncemetManager>();
             services.AddScoped<IAnnouncemetDal, EfAnnouncemetDal>();
-
         }
+
+        public static void CustomValidator(this IServiceCollection services)
+        {
+            services.AddTransient<IValidator<AnnouncemetAddDTO>, AnnouncemetValidator>();
+            services.AddTransient<IValidator<AnnouncemetUpdateDTO>, AnnouncemetUpdateDtoValidator>();
+        }
+
     }
 }

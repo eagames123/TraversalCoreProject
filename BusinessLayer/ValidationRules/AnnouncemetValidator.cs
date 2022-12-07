@@ -16,7 +16,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x=>x.Title).NotEmpty().WithMessage("Lütfen Başlık alanını boş geçmeyiniz");
             RuleFor(x => x.Content).NotEmpty().WithMessage("Lütfen Başlık alanını boş geçmeyiniz");
             RuleFor(x => x.Title).MinimumLength(5).WithMessage("Lütfen En az 5 karakter veri girişi yapın");
-            RuleFor(x => x.Content).MinimumLength(20).WithMessage("Lütfen En az 5 karakter veri girişi yapın");
+            RuleFor(x => x.Content).MinimumLength(5).WithMessage("Lütfen En az 5 karakter veri girişi yapın");
 
         }
     }
