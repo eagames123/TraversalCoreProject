@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221205192432_create_ContactUses_BoolStatusControl")]
-    partial class create_ContactUses_BoolStatusControl
+    [Migration("20221207112305_AnnouncemetEklendi.")]
+    partial class AnnouncemetEklendi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,6 +73,27 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("About2Id");
 
                     b.ToTable("About2S");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Announcemet", b =>
+                {
+                    b.Property<int>("AnnouncemetId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AnnouncemetId");
+
+                    b.ToTable("Announcemets");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>

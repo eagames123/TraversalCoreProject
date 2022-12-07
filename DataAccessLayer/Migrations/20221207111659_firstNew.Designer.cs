@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221205190623_mig_create_ContactUses")]
-    partial class mig_create_ContactUses
+    [Migration("20221207111659_firstNew")]
+    partial class firstNew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,6 +257,9 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<DateTime>("MessageDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("MessageStatus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

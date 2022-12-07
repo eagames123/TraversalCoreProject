@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig_create_ContactUses : Migration
+    public partial class firstNew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -114,7 +114,8 @@ namespace DataAccessLayer.Migrations
                     Mail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Subject = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MessageBody = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MessageDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    MessageDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MessageStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

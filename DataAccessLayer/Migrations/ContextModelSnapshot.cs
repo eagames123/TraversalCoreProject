@@ -73,6 +73,27 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("About2S");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Announcemet", b =>
+                {
+                    b.Property<int>("AnnouncemetId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AnnouncemetId");
+
+                    b.ToTable("Announcemets");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>
                 {
                     b.Property<int>("Id")

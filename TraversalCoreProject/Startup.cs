@@ -1,7 +1,11 @@
 using System.IO;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
+using DTOLayer.DTOs.AnnouncemetDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +42,12 @@ namespace TraversalCoreProject
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
             services.ContainerDependencies();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddTransient<IValidator<AnnouncemetAddDTO>, AnnouncemetValidator>();
+
+            services.AddControllersWithViews().AddFluentValidation();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
