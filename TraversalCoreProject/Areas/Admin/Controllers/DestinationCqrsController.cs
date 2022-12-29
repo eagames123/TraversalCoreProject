@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using TraversalCoreProject.CQRS.Commands.DestinationCommands;
 using TraversalCoreProject.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProject.CQRS.Queries.DestinationQueries;
 using TraversalCoreProject.CQRS.Results.DestinationResults;
@@ -13,10 +14,19 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 
         private readonly GetDestinationByIdQueryHandler _getDestinationByIdQueryHandler;
 
-        public DestinationCqrsController(GetAllDestinationQueryHandler handler, GetDestinationByIdQueryHandler getDestinationByIdQueryHandler)
+        private readonly CreateDestinationCommandHandler _createDestinationCommandHandler;
+
+        private readonly RemoveDestinationCommandHandler _removeDestinationCommandHandler;
+
+        private readonly UpdateDestinationCommandHandler _updateDestinationCommandHandler;
+
+        public DestinationCqrsController(GetAllDestinationQueryHandler handler, GetDestinationByIdQueryHandler getDestinationByIdQueryHandler, CreateDestinationCommandHandler createDestinationCommandHandler, RemoveDestinationCommandHandler removeDestinationCommandHandler, UpdateDestinationCommandHandler updateDestinationCommandHandler)
         {
             _handler = handler;
             _getDestinationByIdQueryHandler = getDestinationByIdQueryHandler;
+            _createDestinationCommandHandler = createDestinationCommandHandler;
+            _removeDestinationCommandHandler = removeDestinationCommandHandler;
+            _updateDestinationCommandHandler = updateDestinationCommandHandler;
         }
 
         public IActionResult Index()
@@ -25,10 +35,36 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
             return View(values);
         }
 
+        [HttpGet]
         public IActionResult GetDestination(int id)
         {
             var values = _getDestinationByIdQueryHandler.Handle(new GetDestinationByIdQuery(id));
             return View(values);
+        }
+        
+        public IActionResult AddDestination()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddDestination(CreateDestinationCommand command)
+        {
+            _createDestinationCommandHandler.Handle(command);
+            return RedirectToAction("Index");
+        }
+        
+        public IActionResult DeleteDestination(int id)
+        {
+            _removeDestinationCommandHandler.Handle(new RemoveDestinationCommand(id));
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult GetDestination(UpdateDestinationCommand command)
+        {
+            _updateDestinationCommandHandler.Handle(command);
+            return View();
         }
 
     }

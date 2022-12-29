@@ -21,14 +21,15 @@
         <tr>
             <td>@item.id</td>
             <td>@item.City</td>
-            <td>@item.Price</td>
+            <td>@item.Price ₺</td>
             <td>@item.Capacity</td>
             <td>@item.Daynight</td>
             <td><a href="/Destination/DestinationDetails/@item.id" class="btn btn-outline-info">Sitede Gör</a></td>
-            <td><a href="/Admin/Destination/DeleteDestination/@item.id" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Admin/Destination/UpdateDestination/@item.id" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Admin/DestinationCqrs/DeleteDestination/@item.id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/DestinationCqrs/GetDestination/@item.id" class="btn btn-outline-success">Güncelle</a></td>
         </tr>
     }
 </table>
 
-<a href="/Admin/Destination/AddDestination" class="btn btn-outline-primary">Yeni Tur Rotası Ekle</a>
+<br/>
+<a href="/Admin/DestinationCqrs/AddDestination" class="btn btn-outline-primary">Yeni Tur Rotası Ekle</a>

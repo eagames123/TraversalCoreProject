@@ -4,9 +4,9 @@
     {
         public GetDestinationByIdQuery(int id)
         {
-            this.id = id;
+            this.Id = id;
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
     }
 }

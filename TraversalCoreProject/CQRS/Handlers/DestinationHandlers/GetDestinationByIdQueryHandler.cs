@@ -17,12 +17,13 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
 
         public GetDestinationByIdQueryResult Handle(GetDestinationByIdQuery query)
         {
-            Destination values = _context.Destinations.Find(query.id);
+            Destination values = _context.Destinations.Find(query.Id);
             return new GetDestinationByIdQueryResult()
             {
                 City = values.City,
                 Daynight = values.DayNight,
-                Destinationid = values.DestinationId
+                Destinationid = values.DestinationId,
+                Price = values.Price
             };
         }
 
