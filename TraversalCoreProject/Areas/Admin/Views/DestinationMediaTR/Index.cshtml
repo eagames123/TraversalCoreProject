@@ -1,0 +1,34 @@
+﻿@model List<TraversalCoreProject.CQRS.Results.GuideResults.GetAllGuideQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Guide CQRS Mediatr Verileri / </span></h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Sitede Gör</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.GuideId</td>
+            <td>@item.Name</td>
+            <td>@item.Description ₺</td>
+            <td>@item.Image</td>
+            <td><a href="/Destination/DestinationDetails/@item.GuideId" class="btn btn-outline-info">Sitede Gör</a></td>
+            <td><a href="/Admin/DestinationCqrs/DeleteDestination/@item.GuideId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/DestinationCqrs/GetDestination/@item.GuideId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="/Admin/DestinationCqrs/AddDestination" class="btn btn-outline-primary">Yeni Tur Rotası Ekle</a>
