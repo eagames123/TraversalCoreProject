@@ -5,7 +5,7 @@ namespace EntityLayer.Concrete
 {
     public class Comment
     {
-        [Key] 
+        [Key]
         public int CommentID { get; set; }
 
         public string CommentUser { get; set; }
@@ -19,6 +19,5 @@ namespace EntityLayer.Concrete
         public int DestinationID { get; set; }
 
         public Destination Destination { get; set; }
-
     }
 }

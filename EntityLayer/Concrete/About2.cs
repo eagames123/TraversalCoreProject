@@ -14,6 +14,5 @@ namespace EntityLayer.Concrete
         public string Description { get; set; }
 
         public string Image { get; set; }
-
     }
 }

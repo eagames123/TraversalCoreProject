@@ -2,7 +2,7 @@
 
 namespace EntityLayer.Concrete
 {
-   public class SubAbout
+    public class SubAbout
     {
         [Key]
         public int SubAboutId { get; set; }

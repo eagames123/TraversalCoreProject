@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Concrete
 {
-   public class Context:IdentityDbContext<AppUser,AppRole,int>
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,12 +33,11 @@ namespace DataAccessLayer.Concrete
         public DbSet<Testimonial> Testimonials { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
-        
+
         public DbSet<Reservation> Reservations { get; set; }
-        
+
         public DbSet<ContactUs> ContactUses { get; set; }
 
         public DbSet<Announcemet> Announcemets { get; set; }
-
     }
 }

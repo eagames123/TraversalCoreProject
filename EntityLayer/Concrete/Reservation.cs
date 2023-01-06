@@ -9,7 +9,7 @@ namespace EntityLayer.Concrete
         public int AppUserId { get; set; }
 
         public AppUser AppUser { get; set; }
-        
+
         public string PersonCount { get; set; }
 
         //public string Destination { get; set; }
@@ -23,9 +23,5 @@ namespace EntityLayer.Concrete
         public int DestinationId { get; set; }
 
         public Destination Destination { get; set; }
-
-
-
-        
     }
 }
