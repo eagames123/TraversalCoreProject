@@ -1,0 +1,23 @@
+﻿@model TraversalCoreProject.CQRS.Results.GuideResults.GetByIdQueryResult
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Rehber Bİlgi Düzenleme Sayfası </h1>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Rota Güncelleme Sayfası / </span> Rotalar</h4>
+<form method="post">
+    @Html.HiddenFor(x=>x.GuideId)
+    <div class="form-group">
+        @Html.Label("Ad Soyad")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Rehebr Açıklaması")
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+<br/>
+<a href="/Admin/DestinationMediaTR/AddGuide" class="btn btn-outline-primary">Yeni Rehber Ekle</a>

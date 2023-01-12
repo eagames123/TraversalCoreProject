@@ -39,5 +39,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<ContactUs> ContactUses { get; set; }
 
         public DbSet<Announcemet> Announcemets { get; set; }
+
+        public DbSet<Account> Accounts { get; set; }
     }
 }
