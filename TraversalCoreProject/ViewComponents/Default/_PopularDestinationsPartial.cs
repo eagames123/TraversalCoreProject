@@ -12,7 +12,7 @@ namespace TraversalCoreProject.ViewComponents.Default
 
         public IViewComponentResult Invoke()
         {
-            List<Destination> values = _destinationManager.TGetList();
+            List<EntityLayer.Concrete.Destination> values = _destinationManager.TGetList();
 
             return View(values);
         }
