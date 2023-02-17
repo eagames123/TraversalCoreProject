@@ -3,6 +3,9 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -50,9 +53,9 @@ namespace BusinessLayer.Concrete
             return _commentDal.GetListCommentWithDestination();
         }
 
-        public List<Comment> GetListCommentWithDestinationAndUser()
+        public List<Comment> TGetListCommentWithDestinationAndUser(int id)
         {
-            return _commentDal.GetListCommentWithDestinationAndUser();
+            return _commentDal.GetListCommentWithDestinationAndUser(id);
         }
     }
 }

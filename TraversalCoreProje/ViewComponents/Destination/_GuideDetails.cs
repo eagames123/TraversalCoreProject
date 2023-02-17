@@ -1,5 +1,9 @@
 ﻿using BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace TraversalCoreProje.ViewComponents.Destination
 {
@@ -12,7 +16,7 @@ namespace TraversalCoreProje.ViewComponents.Destination
         }
         public IViewComponentResult Invoke()
         {
-            var values = _guideService.TGetByID(2);
+            var values = _guideService.TGetByID(1);
             return View(values);
         }
     }

@@ -1,6 +1,10 @@
 ﻿using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using TraversalCoreProje.Models;
 
 namespace TraversalCoreProje.Areas.Admin.Controllers

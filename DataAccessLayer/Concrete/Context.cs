@@ -1,6 +1,11 @@
 ﻿using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
@@ -8,7 +13,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("server=DESKTOP-E6SPDSH\\SQLEXPRESS;database=TraversalDB;integrated security=true;");
+            //optionsBuilder.UseSqlServer("server=ISU-NB-00414\\SQLEXPRESS;database=TraversalDB;integrated security=true;");
             optionsBuilder.UseSqlServer("server=ISU-NB-00414\\SQLEXPRESS;database=TraversalDB;integrated security=true;");
         }
 

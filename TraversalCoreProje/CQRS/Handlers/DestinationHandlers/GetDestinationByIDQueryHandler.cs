@@ -1,4 +1,8 @@
 ﻿using DataAccessLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using TraversalCoreProje.CQRS.Queries.DestinationQueries;
 using TraversalCoreProje.CQRS.Results.DestinationResults;
 
