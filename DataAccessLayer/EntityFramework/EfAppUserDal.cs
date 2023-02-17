@@ -4,7 +4,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfAppUserDal:GenericRepository<AppUser>,IAppUserDal
+    public class EfAppUserDal : GenericRepository<AppUser>, IAppUserDal
     {
     }
 }

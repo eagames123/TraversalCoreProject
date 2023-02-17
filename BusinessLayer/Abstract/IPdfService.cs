@@ -1,6 +1,6 @@
 ﻿namespace BusinessLayer.Abstract
 {
-    public interface IPdfService
+   public interface IPdfService
     {
     }
 }

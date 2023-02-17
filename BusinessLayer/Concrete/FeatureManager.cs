@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
     public class FeatureManager:IFeatureService
     {
-        private IFeatureDal _featureDal;
+        IFeatureDal _featureDal;
 
         public FeatureManager(IFeatureDal featureDal)
         {
             _featureDal = featureDal;
         }
 
-        public void Tadd(Feature t)
+        public void TAdd(Feature t)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Feature t)
+        public void TDelete(Feature t)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Feature t)
+        public Feature TGetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +35,7 @@ namespace BusinessLayer.Concrete
             return _featureDal.GetList();
         }
 
-        public Feature TGetById(int id)
+        public void TUpdate(Feature t)
         {
             throw new NotImplementedException();
         }

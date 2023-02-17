@@ -2,8 +2,7 @@
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAccountDal: IGenericUnitOfWorkDal<Account>
+    public interface IAccountDal : IGenericUowDal<Account>
     {
-
     }
 }

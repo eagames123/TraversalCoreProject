@@ -16,12 +16,12 @@ namespace DataAccessLayer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.13")
+                .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("EntityLayer.Concrete.About", b =>
                 {
-                    b.Property<int>("AboutId")
+                    b.Property<int>("AboutID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -44,14 +44,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AboutId");
+                    b.HasKey("AboutID");
 
                     b.ToTable("Abouts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.About2", b =>
                 {
-                    b.Property<int>("About2Id")
+                    b.Property<int>("About2ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -68,14 +68,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("About2Id");
+                    b.HasKey("About2ID");
 
-                    b.ToTable("About2S");
+                    b.ToTable("About2s");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Account", b =>
                 {
-                    b.Property<int>("AccountId")
+                    b.Property<int>("AccountID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -86,14 +86,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AccountId");
+                    b.HasKey("AccountID");
 
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Announcemet", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Announcement", b =>
                 {
-                    b.Property<int>("AnnouncemetId")
+                    b.Property<int>("AnnouncementID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -107,9 +107,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AnnouncemetId");
+                    b.HasKey("AnnouncementID");
 
-                    b.ToTable("Announcemets");
+                    b.ToTable("Announcements");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>
@@ -251,12 +251,12 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
                 {
-                    b.Property<int>("ContactId")
+                    b.Property<int>("ContactID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Adress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
@@ -274,14 +274,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("ContactId");
+                    b.HasKey("ContactID");
 
                     b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.ContactUs", b =>
                 {
-                    b.Property<int>("ContactUsId")
+                    b.Property<int>("ContactUsID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -304,14 +304,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ContactUsId");
+                    b.HasKey("ContactUsID");
 
                     b.ToTable("ContactUses");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Destination", b =>
                 {
-                    b.Property<int>("DestinationId")
+                    b.Property<int>("DestinationID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -349,14 +349,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("DestinationId");
+                    b.HasKey("DestinationID");
 
                     b.ToTable("Destinations");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Feature", b =>
                 {
-                    b.Property<int>("FeatureId")
+                    b.Property<int>("FeatureID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -373,14 +373,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FeatureId");
+                    b.HasKey("FeatureID");
 
                     b.ToTable("Features");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Feature2", b =>
                 {
-                    b.Property<int>("Feature2Id")
+                    b.Property<int>("Feature2ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -397,14 +397,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Feature2Id");
+                    b.HasKey("Feature2ID");
 
-                    b.ToTable("Feature2S");
+                    b.ToTable("Feature2s");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Guide", b =>
                 {
-                    b.Property<int>("GuideId")
+                    b.Property<int>("GuideID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -427,14 +427,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("TwitterUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GuideId");
+                    b.HasKey("GuideID");
 
                     b.ToTable("Guides");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Newsletter", b =>
                 {
-                    b.Property<int>("NewsletterId")
+                    b.Property<int>("NewsletterID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -442,14 +442,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Mail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("NewsletterId");
+                    b.HasKey("NewsletterID");
 
                     b.ToTable("Newsletters");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Reservation", b =>
                 {
-                    b.Property<int>("ReservationId")
+                    b.Property<int>("ReservationID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -460,30 +460,30 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DestinationId")
+                    b.Property<int>("DestinationID")
                         .HasColumnType("int");
 
                     b.Property<string>("PersonCount")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ReservationDate")
+                    b.Property<DateTime>("ReservastionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ReservationId");
+                    b.HasKey("ReservationID");
 
                     b.HasIndex("AppUserId");
 
-                    b.HasIndex("DestinationId");
+                    b.HasIndex("DestinationID");
 
                     b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.SubAbout", b =>
                 {
-                    b.Property<int>("SubAboutId")
+                    b.Property<int>("SubAboutID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -494,14 +494,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SubAboutId");
+                    b.HasKey("SubAboutID");
 
                     b.ToTable("SubAbouts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Testimonial", b =>
                 {
-                    b.Property<int>("TestimonialId")
+                    b.Property<int>("TestimonialID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -518,7 +518,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("TestimonialId");
+                    b.HasKey("TestimonialID");
 
                     b.ToTable("Testimonials");
                 });
@@ -645,7 +645,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasOne("EntityLayer.Concrete.Destination", "Destination")
                         .WithMany("Reservations")
-                        .HasForeignKey("DestinationId")
+                        .HasForeignKey("DestinationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

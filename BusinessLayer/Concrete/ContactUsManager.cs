@@ -3,9 +3,6 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -18,12 +15,7 @@ namespace BusinessLayer.Concrete
             _contactUsDal = contactUsDal;
         }
 
-        public void Delete(ContactUs t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Tadd(ContactUs t)
+        public void TAdd(ContactUs t)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +25,12 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public ContactUs TGetById(int id)
+        public void TDelete(ContactUs t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ContactUs TGetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -53,7 +50,7 @@ namespace BusinessLayer.Concrete
             return _contactUsDal.GetListContactUsByTrue();
         }
 
-        public void Update(ContactUs t)
+        public void TUpdate(ContactUs t)
         {
             throw new NotImplementedException();
         }

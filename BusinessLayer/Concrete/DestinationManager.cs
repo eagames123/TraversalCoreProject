@@ -1,41 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-   public class DestinationManager:IDestinationService
-   {
-       private readonly IDestinationDal _destinationDal;
+    public class DestinationManager : IDestinationService
+    {
+        IDestinationDal _destinationDal;
 
-       public DestinationManager(IDestinationDal destinationDal)
-       {
-           _destinationDal = destinationDal;
-       }
+        public DestinationManager(IDestinationDal destinationDal)
+        {
+            _destinationDal = destinationDal;
+        }
 
-        public void Tadd(Destination t)
+        public void TAdd(Destination t)
         {
             _destinationDal.Insert(t);
         }
 
-        public void Delete(Destination t)
+        public void TDelete(Destination t)
         {
             _destinationDal.Delete(t);
         }
 
-        public Destination TGetById(int id)
+        public Destination TGetByID(int id)
         {
-            return _destinationDal.GetById(id);
+            return _destinationDal.GetByID(id);
         }
 
         public List<Destination> TGetList()
         {
-           return _destinationDal.GetList();
+            return _destinationDal.GetList();
         }
 
-        public void Update(Destination t)
+        public void TUpdate(Destination t)
         {
             _destinationDal.Update(t);
         }

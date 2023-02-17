@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,15 +12,15 @@ namespace DataAccessLayer.EntityFramework
     {
         public void ContactUsStatusChangeToFalse(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public List<ContactUs> GetListContactUsByFalse()
         {
-            using (var context = new Context())
+            using(var context=new Context())
             {
-                var values = context.ContactUses.Where(x => x.MessageStatus == false);
-                return values.ToList();
+                var values = context.ContactUses.Where(x => x.MessageStatus == false).ToList();
+                return values;
             }
         }
 
@@ -27,8 +28,8 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var context = new Context())
             {
-                var values = context.ContactUses.Where(x => x.MessageStatus == true);
-                return values.ToList();
+                var values = context.ContactUses.Where(x => x.MessageStatus == true).ToList();
+                return values;
             }
         }
     }

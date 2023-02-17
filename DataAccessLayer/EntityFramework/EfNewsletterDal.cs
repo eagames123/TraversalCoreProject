@@ -4,7 +4,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfNewsletterDal : GenericRepository<Newsletter>, INewsletterDal
+    public class EfNewsletterDal : GenericRepository<Newsletter>, INewsLetterDal
     {
     }
 }

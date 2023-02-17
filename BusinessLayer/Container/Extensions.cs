@@ -1,13 +1,12 @@
 ﻿using BusinessLayer.Abstract;
-using BusinessLayer.Abstract.AbstractUnitOfWork;
+using BusinessLayer.Abstract.AbstractUow;
 using BusinessLayer.Concrete;
-using BusinessLayer.Concrete.ConcreteUnitOfWork;
+using BusinessLayer.Concrete.ConcreteUow;
 using BusinessLayer.ValidationRules;
-using BusinessLayer.ValidationRules.AnnouncemetValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using DataAccessLayer.UnitOfWork;
-using DTOLayer.DTOs.AnnouncemetDTOs;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -33,28 +32,23 @@ namespace BusinessLayer.Container
             services.AddScoped<IGuideDal, EfGuideDal>();
 
             services.AddScoped<IExcelService, ExcelManager>();
-
             services.AddScoped<IPdfService, PdfManager>();
 
             services.AddScoped<IContactUsService, ContactUsManager>();
             services.AddScoped<IContactUsDal, EfContactUsDal>();
 
-            services.AddScoped<IAnnouncemetService, AnnouncemetManager>();
-            services.AddScoped<IAnnouncemetDal, EfAnnouncemetDal>();
+            services.AddScoped<IAnnouncementService, AnnouncementManager>();
+            services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 
-            services.AddScoped<IAccountService,AccountManager>();
+            services.AddScoped<IAccountService, AccountManager>();
             services.AddScoped<IAccountDal, EfAccountDal>();
 
-
-            services.AddScoped<IUnitOfWorkDal, UnitOfWorkDal>();
-            
+            services.AddScoped<IUowDal, UowDal>();
         }
 
-        public static void CustomValidator(this IServiceCollection services)
+        public static void CustomerValidator(this IServiceCollection services)
         {
-            services.AddTransient<IValidator<AnnouncemetAddDTO>, AnnouncemetValidator>();
-            services.AddTransient<IValidator<AnnouncemetUpdateDTO>, AnnouncemetUpdateDtoValidator>();
+            services.AddTransient<IValidator<AnnouncementAddDto>, AnnouncementValidator>();
         }
-
     }
 }

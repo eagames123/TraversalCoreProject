@@ -1,45 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager:IAboutService
+    public class AboutManager : IAboutService
     {
-        //Constructor Dependency Injection
-        private readonly IAboutDal _aboutDal;
+        IAboutDal _aboutDal;
 
         public AboutManager(IAboutDal aboutDal)
         {
             _aboutDal = aboutDal;
         }
-
-        public void Tadd(About t)
+        public void TAdd(About t)
         {
             _aboutDal.Insert(t);
         }
 
-        public void Delete(About t)
+        public void TDelete(About t)
         {
             _aboutDal.Delete(t);
         }
 
-        public void Update(About t)
+        public About TGetByID(int id)
         {
-            _aboutDal.Update(t);
+            throw new NotImplementedException();
         }
 
         public List<About> TGetList()
         {
-            _aboutDal.GetList();
-            return null;
+            return _aboutDal.GetList();
         }
 
-        public About TGetById(int id)
+        public void TUpdate(About t)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(t);
         }
     }
 }

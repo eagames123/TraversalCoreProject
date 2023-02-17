@@ -1,12 +1,9 @@
 ﻿namespace EntityLayer.Concrete
 {
-    public class Account
+   public class Account
     {
-        public int AccountId { get; set; }
-
+        public int AccountID { get; set; }
         public string Name { get; set; }
-
-        public decimal Balance { get; set; }  
-
+        public decimal Balance { get; set; }
     }
 }

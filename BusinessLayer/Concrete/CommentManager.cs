@@ -1,36 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class CommentManager:ICommentService
+    public class CommentManager : ICommentService
     {
-        private ICommentDal _commentDal;
+        ICommentDal _commentDal;
 
         public CommentManager(ICommentDal commentDal)
         {
             _commentDal = commentDal;
         }
 
-        public void Tadd(Comment t)
+        public void TAdd(Comment t)
         {
             _commentDal.Insert(t);
         }
 
-        public void Delete(Comment t)
+        public void TDelete(Comment t)
         {
             _commentDal.Delete(t);
         }
 
-        public void Update(Comment t)
+        public Comment TGetByID(int id)
         {
-            _commentDal.Update(t);
+            return _commentDal.GetByID(id);
         }
 
         public List<Comment> TGetList()
@@ -38,14 +35,24 @@ namespace BusinessLayer.Concrete
             return _commentDal.GetList();
         }
 
-        public Comment TGetById(int id)
+        public List<Comment> TGetDestinationById(int id)
         {
-            return _commentDal.GetById(id);
+            return _commentDal.GetListByFilter(x => x.DestinationID == id);
+        }
+
+        public void TUpdate(Comment t)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Comment> TGetListCommentWithDestination()
         {
             return _commentDal.GetListCommentWithDestination();
+        }
+
+        public List<Comment> GetListCommentWithDestinationAndUser()
+        {
+            return _commentDal.GetListCommentWithDestinationAndUser();
         }
     }
 }

@@ -5,8 +5,7 @@ namespace EntityLayer.Concrete
     public class Newsletter
     {
         [Key]
-        public int NewsletterId { get; set; }
-
+        public int NewsletterID { get; set; }
         public string Mail { get; set; }
     }
 }

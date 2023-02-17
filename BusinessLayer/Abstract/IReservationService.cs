@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Abstract
 {
     public interface IReservationService : IGenericService<Reservation>
     {
-        List<Reservation> GetListWithReservationByWaitApproval(int id);
-
-        List<Reservation> GetListWithReservationByAccepted(int id);
-
-        List<Reservation> GetListWithReservationByPrevious(int id);
-        
+       List<Reservation> GetListWithReservationByWaitAprroval(int id);
+       List<Reservation> GetListWithReservationByAccepted(int id);
+       List<Reservation> GetListWithReservationByPrevious(int id);
     }
 }

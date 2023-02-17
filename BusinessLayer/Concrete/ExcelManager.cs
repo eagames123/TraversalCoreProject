@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using OfficeOpenXml;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
@@ -8,10 +8,11 @@ namespace BusinessLayer.Concrete
     {
         public byte[] ExcelList<T>(List<T> t) where T : class
         {
-            ExcelPackage excelPackage = new ExcelPackage();
-            var worksheet = excelPackage.Workbook.Worksheets.Add("Sayfa1");
-            worksheet.Cells["A1"].LoadFromCollection(t, true, OfficeOpenXml.Table.TableStyles.Dark1);
-            return excelPackage.GetAsByteArray();
+            ExcelPackage excel = new ExcelPackage();
+            var workSheet = excel.Workbook.Worksheets.Add("Sayfa1");
+            workSheet.Cells["A1"].LoadFromCollection(t, true, OfficeOpenXml.Table.TableStyles.Light10);
+
+            return excel.GetAsByteArray();
         }
     }
 }

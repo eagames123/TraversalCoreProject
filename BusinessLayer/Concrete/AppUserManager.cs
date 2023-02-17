@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class AppUserManager:IAppUserService
+    public class AppUserManager : IAppUserService
     {
-        private IAppUserDal _appUserDal;
+        IAppUserDal _appUserDal;
 
         public AppUserManager(IAppUserDal appUserDal)
         {
             _appUserDal = appUserDal;
         }
 
-        public void Tadd(AppUser t)
+        public void TAdd(AppUser t)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(AppUser t)
+        public void TDelete(AppUser t)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(AppUser t)
+        public AppUser TGetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
             return _appUserDal.GetList();
         }
 
-        public AppUser TGetById(int id)
+        public void TUpdate(AppUser t)
         {
             throw new NotImplementedException();
         }

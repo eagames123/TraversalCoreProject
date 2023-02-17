@@ -2,7 +2,7 @@
 
 namespace BusinessLayer.Abstract
 {
-    public interface IAppUserService:IGenericService<AppUser>
+    public interface IAppUserService : IGenericService<AppUser>
     {
     }
 }

@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class TestimonialManager:ITestimonialService
+    public class TestimonialManager : ITestimonialService
     {
-        private ITestimonialDal _testimonialDal;
+        ITestimonialDal _testimonialDal;
 
         public TestimonialManager(ITestimonialDal testimonialDal)
         {
             _testimonialDal = testimonialDal;
         }
 
-        public void Tadd(Testimonial t)
+        public void TAdd(Testimonial t)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Testimonial t)
+        public void TDelete(Testimonial t)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Testimonial t)
+        public Testimonial TGetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
             return _testimonialDal.GetList();
         }
 
-        public Testimonial TGetById(int id)
+        public void TUpdate(Testimonial t)
         {
             throw new NotImplementedException();
         }

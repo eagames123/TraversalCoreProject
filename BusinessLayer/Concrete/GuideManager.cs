@@ -1,43 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class GuideManager:IGuideService
+    public class GuideManager : IGuideService
     {
-        private IGuideDal _guideDal;
+        IGuideDal _guideDal;
 
         public GuideManager(IGuideDal guideDal)
         {
             _guideDal = guideDal;
         }
 
-        public void Tadd(Guide t)
+        public void TAdd(Guide t)
         {
-           _guideDal.Insert(t);
+            _guideDal.Insert(t);
         }
 
-        public void Delete(Guide t)
+        public void TChangeToFalseByGuide(int id)
         {
-            _guideDal.Delete(t);
-        }
-
-        public void Update(Guide t)
-        {
-            _guideDal.Update(t);
-        }
-
-        public List<Guide> TGetList()
-        {
-            return _guideDal.GetList();
-        }
-
-        public Guide TGetById(int id)
-        {
-            return _guideDal.GetById(id);
+            _guideDal.ChangeToFalseByGuide(id);
         }
 
         public void TChangeToTrueByGuide(int id)
@@ -45,9 +29,24 @@ namespace BusinessLayer.Concrete
             _guideDal.ChangeToTrueByGuide(id);
         }
 
-        public void TChangeToFalseByGuide(int id)
+        public void TDelete(Guide t)
         {
-            _guideDal.ChangeToFalseByGuide(id);
+            _guideDal.Delete(t);
+        }
+
+        public Guide TGetByID(int id)
+        {
+            return _guideDal.GetByID(id);
+        }
+
+        public List<Guide> TGetList()
+        {
+            return _guideDal.GetList();
+        }
+
+        public void TUpdate(Guide t)
+        {
+            _guideDal.Update(t);
         }
     }
 }

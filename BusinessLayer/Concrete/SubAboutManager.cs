@@ -1,41 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class SubAboutManager:ISubAboutService
+    public class SubAboutManager : ISubAboutService
     {
-        private ISubAboutDal _subaboutDal;
+        ISubAboutDal _subAboutDal;
 
-        public SubAboutManager(ISubAboutDal subaboutDal)
+        public SubAboutManager(ISubAboutDal subAboutDal)
         {
-            _subaboutDal = subaboutDal;
+            _subAboutDal = subAboutDal;
         }
 
-        public void Tadd(SubAbout t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(SubAbout t)
+        public void TAdd(SubAbout t)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(SubAbout t)
+        public void TDelete(SubAbout t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SubAbout TGetByID(int id)
         {
             throw new NotImplementedException();
         }
 
         public List<SubAbout> TGetList()
         {
-            return _subaboutDal.GetList();
+            return _subAboutDal.GetList();
         }
 
-        public SubAbout TGetById(int id)
+        public void TUpdate(SubAbout t)
         {
             throw new NotImplementedException();
         }

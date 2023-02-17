@@ -5,10 +5,11 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfAccountDal:GenericUnitOfWorkRepository<Account>,IAccountDal
+    public class EfAccountDal : GenericUowRepository<Account>, IAccountDal
     {
         public EfAccountDal(Context context) : base(context)
         {
+
         }
     }
 }
