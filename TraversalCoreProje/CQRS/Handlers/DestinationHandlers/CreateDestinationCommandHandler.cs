@@ -1,9 +1,5 @@
 ﻿using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TraversalCoreProje.CQRS.Commands.DestinationCommands;
 
 namespace TraversalCoreProje.CQRS.Handlers.DestinationHandlers

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TraversalCoreProje.CQRS.Results.DestinationResults
+﻿namespace TraversalCoreProje.CQRS.Results.DestinationResults
 {
     public class GetAllDestinationQueryResult
     {

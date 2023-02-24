@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230217114217_mig_add_guidelist_image")]
-    partial class mig_add_guidelist_image
+    [Migration("20230224081829_firstAdd")]
+    partial class firstAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
